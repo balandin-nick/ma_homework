@@ -2,7 +2,7 @@ version: "3.9"
 services:
   service:
     container_name: ma_homework_service
-    image: ma_homework
+    image: nickfeld/ma_homework_01:0.1.0
     command: uvicorn app.webapp:app --host 0.0.0.0 --port 8000 --reload --reload-dir app
     build:
       context: .
