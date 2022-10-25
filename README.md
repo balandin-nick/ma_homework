@@ -5,8 +5,8 @@ The first homework on the course "Microservice architecture"
 ## Текст задания
 
 Создать минимальный сервис, который:
-- отвечает на порту 8000 `{"status": "OK"}`
-- имеет http-метод `GET /health/`
+- отвечает на порту 8000
+- имеет http-метод `GET /health/` с ответом `{"status": "OK"}`
 
 Cобрать локально образ приложения в докер.
 
