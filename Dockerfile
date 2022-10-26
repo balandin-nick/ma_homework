@@ -24,4 +24,4 @@ RUN poetry config virtualenvs.create false && \
 COPY . .
 
 # Команда запуска
-CMD "bash"
+CMD ["uvicorn", "app.webapp:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
