@@ -9,6 +9,11 @@ app = FastAPI(
 )
 
 
+@app.get("/")
+def get_index() -> str:
+    return "Hello!"
+
+
 @app.get("/health")
-def hello_world() -> Dict[str, Any]:
+def get_health() -> Dict[str, Any]:
     return {"status": "OK"}

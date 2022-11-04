@@ -1,18 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ma_homework
-  labels:
-    name: ma_homework
+  name: ma-homework
 spec:
   rules:
   - host: arch.homework
     http:
       paths:
-      - pathType: Prefix
-        path: "/otusapp($|/)(.*)"
-        backend:
-          service:
-            name: ma_homework
-            port: 
-              number: 8000
+        - path: /otusapp
+          pathType: Prefix
+          backend:
+            service:
+              name: ma-homework
+              port:
+                number: 9000

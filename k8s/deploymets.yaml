@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ma_homework
+  name: ma-homework
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ma_homework
+      app: ma-homework
   template:
     metadata:
       labels:
-        app: ma_homework
+        app: ma-homework
     spec:
       containers:
-      - name: ma_homework
+      - name: ma-homework
         image: nickfeld/ma_homework:0.1.0
         resources:
           limits:
