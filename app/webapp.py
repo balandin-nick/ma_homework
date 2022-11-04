@@ -4,7 +4,7 @@ from fastapi import FastAPI
 
 
 app = FastAPI(
-    title="Homework 1",
+    title="Homework",
     description="Test FastApi application for Microservice Architecture",
 )
 
