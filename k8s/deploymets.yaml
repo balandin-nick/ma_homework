@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ma-homework
-        image: nickfeld/ma_homework:0.1.0
+        image: nickfeld/ma_homework:0.1.1
         resources:
           limits:
             memory: "128Mi"
