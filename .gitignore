@@ -2,7 +2,6 @@
 .idea/
 .pythonenv/
 .vscode/
-external/
 secrets/
 docker-compose.override.yml
 
