@@ -7,6 +7,6 @@ spec:
     app: ma-homework
   ports:
   - protocol: TCP
-    port: 9000
+    port: 80
     targetPort: web
   type: NodePort
