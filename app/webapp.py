@@ -1,19 +1,6 @@
-from typing import Any, Dict
-
 from fastapi import FastAPI
+from .api.routers import user_router
 
 
-app = FastAPI(
-    title="Homework",
-    description="Test FastApi application for Microservice Architecture",
-)
-
-
-@app.get("/")
-def get_index() -> str:
-    return "Hello!"
-
-
-@app.get("/health")
-def get_health() -> Dict[str, Any]:
-    return {"status": "OK"}
+webapp = FastAPI()
+webapp.include_router(user_router)

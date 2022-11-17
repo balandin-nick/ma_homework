@@ -1,15 +1,17 @@
 [tool.poetry]
-name = "homework-01"
+name = "homework for microservice architecture"
 version = "0.2.0"
-description = "Пример кода для второй статьи"
+description = "Практика по курсу «Микросервисная архитектура»"
 authors = ["Nick Balandin"]
 license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-python-dotenv = "^0.21.0"
+sqlalchemy = "^1.4.44"
 pydantic = "^1.10.2"
+phonenumbers = "^8.13.0"
 fastapi = "^0.82.0"
+fastapi-crudrouter = "^0.8.5"
 uvicorn = "^0.18.3"
 
 [tool.poetry.dev-dependencies]
