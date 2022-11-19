@@ -2,11 +2,27 @@ version: "3.9"
 services:
   service:
     container_name: ma_homework_service
-    image: nickfeld/ma_homework_01:0.1.0
+    image: nickfeld/ma_homework:0.3.0
     command: uvicorn app.webapp:app --host 0.0.0.0 --port 8000 --reload --reload-dir app
     build:
       context: .
+    environment:
+      SERVICE_DB_HOST: service_db
+      SERVICE_DB_USERNAME: postgres
+      SERVICE_DB_PASSWORD: postgres
+      SERVICE_DB_NAME: postgres
+      SERVICE_DB_PORT: 5432
     ports:
       - "8000:8000"
     volumes:
       - .:/opt/homework
+
+  service_db:
+    container_name: ma_homework_db
+    image: postgres:10
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres

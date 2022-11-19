@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from .base import BaseDBMetaModel
+from app.db.base import BaseDBMetaModel
 
 
 __all__ = [

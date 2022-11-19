@@ -1,6 +1,6 @@
 from pydantic import Field, SecretStr
 
-from .base import AdvancedBaseSettings
+from app.settings.base import AdvancedBaseSettings
 
 
 __all__ = [
@@ -21,7 +21,8 @@ class ServiceDatabaseSettings(AdvancedBaseSettings):
 
     @property
     def postgresql_url(self) -> str:
-        return f"postgresql://{self.username}:{self.password}@{self.host}:{self.port}/{self.db_name}"
+        return f"postgresql://{self.username}:{self.password.get_secret_value()}" \
+               f"@{self.host}:{self.port}/{self.db_name}"
 
 
 service_database_settings = ServiceDatabaseSettings()

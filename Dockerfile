@@ -2,7 +2,7 @@ FROM python:3.9-slim as base
 LABEL maintainer="Nick Balandin <balandin.nick@perm-rus.ru>"
 
 # Сборка зависимостей
-ARG BUILD_DEPS="curl"
+ARG BUILD_DEPS="curl gcc libpq-dev"
 RUN apt-get update && apt-get install -y $BUILD_DEPS
 
 # Установка poetry

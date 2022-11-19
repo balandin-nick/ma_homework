@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr
 
-from .fields import PhoneNumber
+from app.api.models.fields import PhoneNumber
 
 
 __all__ = [

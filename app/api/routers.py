@@ -1,8 +1,8 @@
 from fastapi_crudrouter import SQLAlchemyCRUDRouter
 
-from .models import UserModel, UserSchema
-from .models.db import UserDBModel
-from .models.db.base import get_session
+from app.api.models import UserModel, UserSchema
+from app.db import UserDBModel
+from app.db.base import get_session
 
 
 user_router = SQLAlchemyCRUDRouter(
