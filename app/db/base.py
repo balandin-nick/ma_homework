@@ -15,7 +15,7 @@ __all__ = [
 ]
 
 
-engine = create_engine(url=service_database_settings.postgresql_url, connect_args={"check_same_thread": False})
+engine = create_engine(url=service_database_settings.postgresql_url)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 BaseDBMetaModel = declarative_base()
 
