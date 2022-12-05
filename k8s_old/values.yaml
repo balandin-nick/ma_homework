@@ -1,0 +1,15 @@
+replicaCount: 2
+
+image: nickfeld/ma-homework:0.3.0
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: web
+
+externalPostgresql:
+  postgresqlUsername: postgres
+  postgresqlPassword: postgres
+  postgresqlDatabase: postgres
+  postgresqlHost: "postgres"
+  postgresqlPort: "5432"

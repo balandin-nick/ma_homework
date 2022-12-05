@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "ma-homework.fullname" . }}-test-connection"
+  labels:
+    {{- include "ma-homework.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "ma-homework.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

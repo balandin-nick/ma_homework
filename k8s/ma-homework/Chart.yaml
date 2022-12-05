@@ -1,0 +1,8 @@
+apiVersion: v2
+name: ma-homework
+description: A Helm chart for 'MA Homework'
+
+type: application
+
+version: 0.1.0
+appVersion: "0.3.1"
