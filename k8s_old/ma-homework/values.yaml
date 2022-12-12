@@ -1,11 +1,26 @@
 replicaCount: 2
 
-image: nickfeld/ma-homework:0.3.0
+image:
+  repository: nickfeld/ma_homework
+
+resources:
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
+
+deployment:
+  portName: web
+  containerPort: 8000
 
 service:
   type: NodePort
   port: 80
   targetPort: web
+
+ingress:
+  host: arch.homework
+  serviceName: ma-homework
+  servicePortNumber: 80
 
 externalPostgresql:
   postgresqlUsername: postgres

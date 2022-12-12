@@ -39,31 +39,11 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
-            - name: SERVICE_DB_NAME
+            - name: DATABASE_URI
               valueFrom:
                 secretKeyRef:
                   name: ma-homework-secret
-                  key: POSTGRESQL_DATABASE
-            - name: SERVICE_DB_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: ma-homework-secret
-                  key: POSTGRESQL_HOST
-            - name: SERVICE_DB_PORT
-              valueFrom:
-                secretKeyRef:
-                  name: ma-homework-secret
-                  key: POSTGRESQL_PORT
-            - name: SERVICE_DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: ma-homework-secret
-                  key: POSTGRESQL_USERNAME
-            - name: SERVICE_DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: ma-homework-secret
-                  key: POSTGRESQL_PASSWORD
+                  key: DATABASE_URI
             - name: GREETING
               valueFrom:
                 configMapKeyRef:

@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: ma-homework
 data:
-  GREETING: I'm MA Homework, hello.
+  GREETING: Hello! I'm postman Pechkin!
 ---
 apiVersion: v1
 kind: Secret
@@ -11,4 +11,8 @@ metadata:
   name: ma-homework-secret
 type: Opaque
 data:
-  DATABASE_URI: {{ printf "postgresql+psycopg2://%s:%s@%s:%s/%s" .Values.externalPostgresql.postgresqlUsername .Values.externalPostgresql.postgresqlPassword .Values.externalPostgresql.postgresqlHost .Values.externalPostgresql.postgresqlPort .Values.externalPostgresql.postgresqlDatabase  | b64enc | quote }}
+  POSTGRESQL_DATABASE: {{ .Values.postgresql.postgresqlDatabase | b64enc | quote }}
+  POSTGRESQL_HOST: {{ (include "postgresql.fullname" .) | b64enc | quote }}
+  POSTGRESQL_PORT: {{ .Values.postgresql.service.port | b64enc | quote }}
+  POSTGRESQL_USERNAME: {{ .Values.postgresql.postgresqlUsername | b64enc | quote }}
+  POSTGRESQL_PASSWORD: {{ .Values.postgresql.postgresqlPassword | b64enc | quote }}

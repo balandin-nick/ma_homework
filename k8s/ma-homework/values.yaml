@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: nickfeld/ma-homework
+  repository: nickfeld/ma_homework
 
 resources:
   limits:
@@ -22,9 +22,18 @@ ingress:
   serviceName: ma-homework
   servicePortNumber: 80
 
-externalPostgresql:
+postgresql:
+  enabled: true
   postgresqlUsername: postgres
   postgresqlPassword: postgres
   postgresqlDatabase: postgres
   postgresqlHost: "postgres"
-  postgresqlPort: "5432"
+  service:
+    port: "5432"
+
+# externalPostgresql:
+#   postgresqlUsername: postgres
+#   postgresqlPassword: postgres
+#   postgresqlDatabase: postgres
+#   postgresqlHost: "postgres"
+#   postgresqlPort: "5432"
